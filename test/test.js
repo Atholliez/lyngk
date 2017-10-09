@@ -55,13 +55,25 @@ LyngkTestCase.prototype.test7 = function () {
 
 LyngkTestCase.prototype.test8 = function () {
     var intersection = new Lyngk.Intersection();
-    intersection.pose('bleu');
+    intersection.poser('bleu');
     assertTrue(intersection.getState() === Lyngk.State.ONE_PIECE && intersection.color() === "bleu");
 };
 
 LyngkTestCase.prototype.test9 = function () {
     var intersection = new Lyngk.Intersection();
-    intersection.pose("bleu");
-    intersection.pose("rouge");
+    intersection.poser('bleu');
+    intersection.poser('rouge');
     assertTrue(intersection.getState() === Lyngk.State.STACK && intersection.color() === "rouge");
 };
+
+LyngkTestCase.prototype.test10 = function () {
+    var intersection = new Lyngk.Intersection();
+    intersection.poser('noir');
+    intersection.poser('ivoir');
+    intersection.poser('bleu');
+    intersection.poser('rouge');
+    intersection.poser('vert');
+    assertTrue(intersection.getState() === Lyngk.State.FULL_STACK);
+};
+
+
