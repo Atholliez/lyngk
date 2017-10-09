@@ -2,13 +2,13 @@
 
 var LyngkTestCase = TestCase("LyngkTestCase");
 
-LyngkTestCase.prototype.testA= function(){
+LyngkTestCase.prototype.test1= function(){
     var c = new Lyngk.Coordinates("A",1);
     assertFalse(c.valid());
 
 };
 
-LyngkTestCase.prototype.testB= function(){
+LyngkTestCase.prototype.test2= function(){
 
     var cpt=0;
     var lettre = [ 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'];
@@ -26,36 +26,42 @@ LyngkTestCase.prototype.testB= function(){
 };
 
 
-LyngkTestCase.prototype.testC = function () {
+LyngkTestCase.prototype.test3 = function () {
     var coordonnee = new Lyngk.Coordinates('A', 3);
     assertEquals(coordonnee.toString(), 'A3');
 };
 
-LyngkTestCase.prototype.testD = function () {
+LyngkTestCase.prototype.test4 = function () {
     var coordonnee = new Lyngk.Coordinates('A', 1);
     assertTrue(coordonnee.toString() === 'invalid');
 };
 
-LyngkTestCase.prototype.testE = function () {
+LyngkTestCase.prototype.test5 = function () {
     var coordonnee = new Lyngk.Coordinates('A', 3);
     var clone = coordonnee.clone();
     assertTrue(coordonnee.toString() === clone.toString());
 };
 
-LyngkTestCase.prototype.testF = function () {
+LyngkTestCase.prototype.test6 = function () {
     var coordonnee = new Lyngk.Coordinates('D',2);
     var hash = coordonnee.hash();
-    assertEquals(hash, 42); 
+    assertEquals(hash, 42);
 };
 
-LyngkTestCase.prototype.testG = function () {
+LyngkTestCase.prototype.test7 = function () {
     var intersection = new Lyngk.Intersection();
     assertEquals(intersection.getState() , Lyngk.State.VACANT);
 };
 
-LyngkTestCase.prototype.testH = function () {
+LyngkTestCase.prototype.test8 = function () {
     var intersection = new Lyngk.Intersection();
     intersection.pose('bleu');
     assertTrue(intersection.getState() === Lyngk.State.ONE_PIECE && intersection.color() === "bleu");
 };
 
+LyngkTestCase.prototype.test9 = function () {
+    var intersection = new Lyngk.Intersection();
+    intersection.pose("bleu");
+    intersection.pose("rouge");
+    assertTrue(intersection.getState() === Lyngk.State.STACK && intersection.color() === "rouge");
+};
