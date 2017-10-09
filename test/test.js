@@ -46,10 +46,16 @@ LyngkTestCase.prototype.testF = function () {
     var coordonnee = new Lyngk.Coordinates('D',2);
     var hash = coordonnee.hash();
     assertEquals(hash, 42);
-
 };
 
 LyngkTestCase.prototype.testG = function () {
     var intersection = new Lyngk.Intersection();
-    assertEquals(intersection.State , 0);
-}
+    assertEquals(intersection.getState() , Lyngk.State.VACANT);
+};
+
+LyngkTestCase.prototype.testH = function () {
+    var intersection = new Lyngk.Intersection();
+    intersection.pose('bleu');
+    assertTrue(intersection.getState() === Lyngk.State.ONE_PIECE && intersection.color() === "bleu");
+};
+
