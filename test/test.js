@@ -48,3 +48,8 @@ LyngkTestCase.prototype.testF = function () {
     assertEquals(hash, 42);
 
 };
+
+LyngkTestCase.prototype.testG = function () {
+    var intersection = new Lyngk.Intersection();
+    assertEquals(intersection.State , 0);
+}
