@@ -23,11 +23,24 @@ Lyngk.Coordinates = function (c, l) {
         else {
             return true;
         }
-    };
-    this.toString = function() {
-        return c + l;
-    }
-    };
+        };
+
+
+        this.toString = function() {
+            if(!this.valid())
+                return 'invalid';
+
+            return c + l;
+        };
+
+
+        this.clone =function() {
+            return new Lyngk.Coordinates(c,l);
+        };
+
+
+
+        };
 
 
 
