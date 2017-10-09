@@ -76,4 +76,8 @@ LyngkTestCase.prototype.test10 = function () {
     assertTrue(intersection.getState() === Lyngk.State.FULL_STACK);
 };
 
-
+LyngkTestCase.prototype.test11 = function () {
+    var plateau = new Lyngk.Engine();
+    plateau.unePiece();
+    assertTrue(plateau.pleinPiece());
+};
