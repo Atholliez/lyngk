@@ -26,6 +26,9 @@ LyngkTestCase.prototype.testB= function(){
 };
 
 
-
+LyngkTestCase.prototype.testC = function () {
+    var coordonnee = new Lyngk.Coordinates('A', 3);
+    assertEquals(coordonnee.toString(), 'A3');
+};
 
 
