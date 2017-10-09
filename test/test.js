@@ -42,3 +42,9 @@ LyngkTestCase.prototype.testE = function () {
     assertTrue(coordonnee.toString() === clone.toString());
 };
 
+LyngkTestCase.prototype.testF = function () {
+    var coordonnee = new Lyngk.Coordinates('D',2);
+    var hash = coordonnee.hash();
+    assertEquals(hash, 42);
+
+};

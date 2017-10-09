@@ -38,7 +38,9 @@ Lyngk.Coordinates = function (c, l) {
             return new Lyngk.Coordinates(c,l);
         };
 
-
+        this.hash =function(){
+            return (c.charCodeAt(c)-64)*10 + l ;
+        };
 
         };
 
