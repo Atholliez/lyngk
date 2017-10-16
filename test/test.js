@@ -83,7 +83,57 @@ LyngkTestCase.prototype.test11 = function () {
 };
 
 LyngkTestCase.prototype.test12 = function (){
-    var plateau = new Lyngk.Engine();
-    plateau.huitColor();
-    assertTrue(plateau.fullColor())
-}
+    var game = new Lyngk.Engine();
+    game.huitColor();
+
+    var tailleJuste=0;
+
+    var cpt_ivoire = 0;
+    var cpt_bleu = 0;
+    var cpt_rouge = 0;
+    var cpt_noir = 0;
+    var cpt_vert = 0;
+    var cpt_blanc = 0;
+
+    var NbValidColor = 0;
+
+    for(var i=0; i<game.getSizePlat(); i++) {
+        if (game.getTaillePileOnInter(i) === 43) {
+            tailleJuste++;
+        }
+
+        for(var j=0; j<43; j++){
+            if(game.getColorFromPieces(i,j) == Lyngk.Color.IVORY){
+                cpt_ivoire++;
+            }
+            if(game.getColorFromPieces(i,j) == Lyngk.Color.BLUE){
+                cpt_bleu++;
+            }
+            if(game.getColorFromPieces(i,j) == Lyngk.Color.RED){
+                cpt_rouge++;
+            }
+            if(game.getColorFromPieces(i,j) == Lyngk.Color.BLACK){
+                cpt_noir++;
+            }
+            if(game.getColorFromPieces(i,j) == Lyngk.Color.GREEN){
+                cpt_vert++;
+            }
+            if(game.getColorFromPieces(i,j) == Lyngk.Color.WHITE){
+                cpt_blanc++;
+            }
+        }
+
+        if(cpt_ivoire==8 && cpt_bleu==8 && cpt_rouge==8 && cpt_noir==8 && cpt_vert==8 && cpt_blanc==8){
+            NbValidColor++;
+        }
+
+        var cpt_ivoire = 0;
+        var cpt_bleu = 0;
+        var cpt_rouge = 0;
+        var cpt_noir = 0;
+        var cpt_vert = 0;
+        var cpt_blanc = 0;
+
+    }
+    assertTrue( NbValidColor=== 43 && tailleJuste === 43);
+};
