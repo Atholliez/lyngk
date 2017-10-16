@@ -81,3 +81,9 @@ LyngkTestCase.prototype.test11 = function () {
     plateau.unePiece();
     assertTrue(plateau.pleinPiece());
 };
+
+LyngkTestCase.prototype.test12 = function (){
+    var plateau = new Lyngk.Engine();
+    plateau.huitColor();
+    assertTrue(plateau.fullColor())
+}
