@@ -32,6 +32,11 @@ Lyngk.Intersection = function (c) {
             state = Lyngk.State.FULL_STACK;
         pile.push(new Lyngk.Piece(c));
         color = c;
-    }
+    };
+
+    this.getHeight = function()
+    {
+        return pile.length;
+    };
 
 };
