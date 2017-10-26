@@ -96,27 +96,41 @@ LyngkTestCase.prototype.test12 = function () {
 
 
      for(var i=0; i<game.getSizePlat(); i++) {
-         if(game.getColorFromPieces(i) == Lyngk.Color.IVORY){
+         if(game.getColorFromPieces(i) === Lyngk.Color.IVORY){
          cpt_ivoire++;
          }
-         if(game.getColorFromPieces(i) == Lyngk.Color.BLUE){
+         if(game.getColorFromPieces(i) === Lyngk.Color.BLUE){
          cpt_bleu++;
          }
-         if(game.getColorFromPieces(i) == Lyngk.Color.RED){
+         if(game.getColorFromPieces(i) === Lyngk.Color.RED){
          cpt_rouge++;
          }
-         if(game.getColorFromPieces(i) == Lyngk.Color.BLACK){
+         if(game.getColorFromPieces(i) === Lyngk.Color.BLACK){
          cpt_noir++;
          }
-         if(game.getColorFromPieces(i) == Lyngk.Color.GREEN){
+         if(game.getColorFromPieces(i) === Lyngk.Color.GREEN){
          cpt_vert++;
          }
-         if(game.getColorFromPieces(i) == Lyngk.Color.WHITE){
+         if(game.getColorFromPieces(i) === Lyngk.Color.WHITE){
          cpt_blanc++;
          }
      }
 
-
      assertTrue(cpt_ivoire===8 && cpt_bleu===8 && cpt_rouge===8 && cpt_noir===8 && cpt_vert===8 && cpt_blanc===3);
+};
+
+LyngkTestCase.prototype.test13 = function () {
+    var plateau = new Lyngk.Engine();
+    plateau.pleinPieceFull();
+    var cpt = 0;
+
+    for (var x = 0; x < plateau.getSizePlat() ; x++) {
+        if (plateau.getTaillePileInter(x) === 1) {
+            cpt++;
+        }
+    }
+    console.log(cpt);
+    assertTrue(cpt === 43);
 
 };
+
