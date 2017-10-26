@@ -21,10 +21,11 @@ Lyngk.Engine = function () {
     };
 
 
+
     this.pleinPiece = function () {
         for (var coordonnee in coordoInters) {
             if (coordoInters.hasOwnProperty(coordonnee)) {
-                if (coordoInters[coordonnee].getState() != Lyngk.State.ONE_PIECE)
+                if (coordoInters[coordonnee].getState() !== Lyngk.State.ONE_PIECE)
                     return false;
             }
         }
@@ -65,17 +66,16 @@ Lyngk.Engine = function () {
 
     };
 
-
-
-
-
     this.getColorFromPieces = function (i){
         return coordoInters[i].getPieceColorFromPile();
     };
 
     this.getSizePlat = function () {
         return coordoInters.length;
-    }
+    };
 
+    this.getTaillePileInter = function(i){
+       return coordoInters[i].getHeight();
+    };
 
 };
