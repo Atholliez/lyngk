@@ -129,8 +129,18 @@ LyngkTestCase.prototype.test13 = function () {
             cpt++;
         }
     }
-    console.log(cpt);
     assertTrue(cpt === 43);
 
 };
+
+
+LyngkTestCase.prototype.test14 = function () {
+    var intersection = new Lyngk.Intersection();
+
+    intersection.poser(Lyngk.Color.BLUE);
+    intersection.poser(Lyngk.Color.RED);
+
+    assertEquals(intersection.color() , Lyngk.Color.RED)
+};
+
 
