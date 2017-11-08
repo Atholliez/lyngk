@@ -2,10 +2,11 @@
 
 Lyngk.State = {VACANT: 0, ONE_PIECE: 1, STACK: 2, FULL_STACK: 3};
 
-Lyngk.Intersection = function (c) {
+Lyngk.Intersection = function (c,l) {
     var state = Lyngk.State.VACANT;
     var color;
     var pile = [];
+    var coordo = new Lyngk.Coordinates(c,l)
 
      this.getState = function (){
          return state;
@@ -39,4 +40,20 @@ Lyngk.Intersection = function (c) {
         return pile.length;
     };
 
+    this.getCoordo = function(){
+        return coordo;
+    }
+
+
+    this.getX=function(){
+        return coordo.getX();
+    };
+    this.getY=function(){
+        return coordo.getY();
+    };
+
+
+    this.getHashedCoordo=function(){
+        return coordo.hash();
+    };
 };
