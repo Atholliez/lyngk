@@ -143,4 +143,12 @@ LyngkTestCase.prototype.test14 = function () {
     assertEquals(intersection.color() , Lyngk.Color.RED)
 };
 
+LyngkTestCase.prototype.test15 = function () {
+    var dep = new Lyngk.Engine();
+    var plat = dep.plateau();
+    var colorA3 = plat['A3'].color();
+    dep.deplacer('A3','B3');
+
+    assertTrue(plat['B3'].color() === colorA3 && plat['A3'].getHeight() === Lyngk.State.VACANT);
+};
 
